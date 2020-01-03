@@ -3,13 +3,17 @@
    become: true
    tasks: 
     - name: Run MongoPull
-      cmd:  docker pull mongo:4.0.4 
+      shell:
+        cmd:  docker pull mongo:4.0.4 
     
     - name: Run MongoDB Docker
-      cmd: docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:4.0.4
+      shell:
+        cmd: docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:4.0.4
     
     - name: Build coindocker
-      cmd: docker build -t coindocker docker/.
+      shell:
+        cmd: docker build -t coindocker docker/.
     
     - name: Run coindocker
-      cmd: docker run --rm coindocker --server {{ ansible_hostname }}
+      shell:
+        cmd: docker run --rm coindocker --server {{ ansible_hostname }}
