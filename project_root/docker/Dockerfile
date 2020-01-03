@@ -12,6 +12,6 @@ RUN cpanm CPAN::Meta\
 #    cpan install JSON &&\
 #    cpan install mongodb 
 WORKDIR /opt
-COPY ../bin/getValue.pl /opt/getValue.pl
+COPY getValue.pl /opt/getValue.pl
 
 ENTRYPOINT ["perl","getValue.pl"]
