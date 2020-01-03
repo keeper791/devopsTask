@@ -61,5 +61,5 @@ while(1)
    print "$usd is the same as before, do nothing!\n";
  }
  print "=================================================================\n";
- sleep(30);
+ sleep(60);
 }
