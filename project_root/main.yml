@@ -16,4 +16,4 @@
     
     - name: Run coindocker
       shell:
-        cmd: docker run --rm coindocker --server {{ ansible_default_ipv4.address }}
+        cmd: docker run --rm -d coindocker --server {{ ansible_default_ipv4.address }}
